@@ -1,14 +1,9 @@
-pub fn add(left: usize, right: usize) -> usize {
-    left + right
-}
+use std::path::PathBuf;
 
-#[cfg(test)]
-mod tests {
-    use super::*;
+use serde::{Deserialize, Serialize};
 
-    #[test]
-    fn it_works() {
-        let result = add(2, 2);
-        assert_eq!(result, 4);
-    }
+#[derive(Serialize, Deserialize, Debug)]
+pub struct Ymmp {
+    #[serde(rename = "FilePath")]
+    file_path: PathBuf,
 }
